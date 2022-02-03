@@ -14,13 +14,13 @@
             <div>
 
                 * Dob
-                <input type="date" id="dob" name="dob" formControlName="dob" >
+                <input type="date" id="dob" name="dob" formControlName="dob">
             </div>
             <div>
 
                 Role :
                 <select name="role" id="role" formControlName="role">
-                    <option value="" selected disabled>Select your role</option>
+                    <!-- <option value="" selected disabled>Select your role</option> -->
                     <option [value]="r.value" *ngFor="let r of roles">{{r.value}}</option>
                 </select>
             </div>
@@ -37,10 +37,9 @@
                     </div>
                     <div>
 
-                        <label for="phone">Phone number:</label>
+                        <label for="number">Phone number:</label>
 
-                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
-                            formControlName="number">
+                        <input type="tel" id="number" name="number" required formControlName="number">
                     </div>
                 </div>
 
@@ -68,7 +67,7 @@
             <button class="card card-small" (click)="reset()" tabindex="0">
                 <span>Reset</span>
             </button>
-            <button class="card card-small" (click)="submit()" tabindex="0" type="submit">
+            <button class="card card-small" (click)="submit()" tabindex="0" [disabled]="!form.valid">
                 <span>Submit</span>
             </button>
 
