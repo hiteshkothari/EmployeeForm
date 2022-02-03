@@ -38,17 +38,17 @@ export class FormComponent implements OnInit {
     console.log(this.form.errors)
     console.log("this.form.valid", this.form.valid)
     console.log("this.form.errors", this.form.errors)
-    if (this.form.valid) {
+    // if (this.form.valid) {
 
 
-      let employeeList = JSON.parse(localStorage.getItem("LOCAL_EmployeeList") || "[]");
-      // console.log('employeeList', employeeList);
-      employeeList.push(this.form.value);
+    let employeeList = JSON.parse(localStorage.getItem("LOCAL_EmployeeList") || "[]");
+    // console.log('employeeList', employeeList);
+    employeeList.push(this.form.value);
 
-      localStorage.setItem("LOCAL_EmployeeList", JSON.stringify(employeeList));
-      console.log('Submit Form');
-      this.route.navigate(['EmployeeDetails']);
-    }
+    localStorage.setItem("LOCAL_EmployeeList", JSON.stringify(employeeList));
+    console.log('Submit Form');
+    this.route.navigate(['EmployeeDetails']);
+    // }
   }
   reset() {
     this.form.reset();
