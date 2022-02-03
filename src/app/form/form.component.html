@@ -1,0 +1,78 @@
+<div class="card_form">
+    Employee Details
+    <form [formGroup]="form">
+
+        <div>
+            Name : <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <div>
+
+                * Address
+                <textarea name="address" id="address" cols="30" rows="10" formControlName="address"></textarea>
+            </div>
+            <div>
+
+                * Dob
+                <input type="date" id="dob" name="dob" formControlName="dob" >
+            </div>
+            <div>
+
+                Role :
+                <select name="role" id="role" formControlName="role">
+                    <option value="" selected disabled>Select your role</option>
+                    <option [value]="r.value" *ngFor="let r of roles">{{r.value}}</option>
+                </select>
+            </div>
+            <div>
+
+                Phone
+                <div formGroupName="phone">
+                    <div>
+
+                        <label for="countrycode">Country Code:</label>
+
+                        <input type="tel" id="countrycode" name="countrycode" required formControlName="countrycode">
+
+                    </div>
+                    <div>
+
+                        <label for="phone">Phone number:</label>
+
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
+                            formControlName="number">
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                Gender
+                <label for="male">Male
+                    <input type="radio" name="gender" value="Male" id="male" formControlName="gender">
+                </label>
+
+                <label for="female">Female
+                    <input type="radio" name="gender" value="Female" id="female" formControlName="gender">
+                </label>
+
+            </div>
+
+        </div>
+        <!-- {{ form.valid }}
+        {{ form.status }}
+        {{ form.value}} -->
+
+
+        <div class="card-container">
+            <button class="card card-small" (click)="reset()" tabindex="0">
+                <span>Reset</span>
+            </button>
+            <button class="card card-small" (click)="submit()" tabindex="0" type="submit">
+                <span>Submit</span>
+            </button>
+
+        </div>
+    </form>
+
+</div>

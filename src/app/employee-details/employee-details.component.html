@@ -1,0 +1,39 @@
+<div *ngFor="let e of employeeList ">
+    <div class="card-1">
+        <div class="">
+            Name : {{e.name}}
+        </div>
+        <div>
+            <div>
+
+                * Address : {{e.address}}
+            </div>
+            <div>
+
+                * Dob : {{e.dob}}
+            </div>
+            <div>
+
+                Role : {{e.role}}
+            </div>
+            <div>
+
+                Phone : {{e.phone.countrycode}} {{e.phone.number}}
+
+            </div>
+            <div>
+                Gender : {{e.gender}}
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<div class="card-container">
+    <button class="card card-small" (click)="add()" tabindex="0">
+        <span>Add New Employee</span>
+    </button>
+</div>
