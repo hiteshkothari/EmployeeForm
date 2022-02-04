@@ -1,0 +1,35 @@
+Upload file
+
+<form [formGroup]="fileForm">
+
+    <div>
+        <label for="file">
+            Select an PDF or image file or text file
+            <input type="file" formControlName="file" id="file" accept="application/pdf,image/*,.txt" required>
+        </label>
+
+    </div>
+
+
+    <div class="card-container">
+        <button class="card card-small" (click)="reset()" tabindex="0">
+            <span>Reset</span>
+        </button>
+        <button class="card card-small" (click)="readFile()" tabindex="0" [disabled]="!fileForm.valid">
+            <span>Submit</span>
+        </button>
+        <button class="card card-small" (click)="goToForm()" tabindex="0">
+            <span>Back To Form</span>
+        </button>
+
+    </div>
+
+    <div style="max-width: 360px ;word-wrap: break-word;">
+        File MetaData: {{MetaData}}
+        <br>
+        <br>
+        File Content : {{fileContent}}
+    </div>
+
+
+</form>

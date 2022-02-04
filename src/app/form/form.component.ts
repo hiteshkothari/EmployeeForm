@@ -54,4 +54,8 @@ export class FormComponent implements OnInit {
     this.form.reset();
     console.log('reset Form');
   }
+  goToFileUpload() {
+    this.route.navigate(['FileUpload']);
+
+  }
 }
